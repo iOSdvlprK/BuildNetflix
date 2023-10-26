@@ -11,4 +11,6 @@ struct Movie: Identifiable {
     var id: String = UUID().uuidString
     var name: String
     var thumbnailURL: URL
+    
+    var categories: [String]
 }
