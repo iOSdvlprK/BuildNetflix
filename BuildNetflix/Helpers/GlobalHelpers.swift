@@ -5,7 +5,7 @@
 //  Created by joe on 2023/10/25.
 //
 
-import Foundation
+import SwiftUI
 
 let exampleMovie1 = Movie(name: "DARK", thumbnailURL: URL(string: "https://picsum.photos/200/300")!, categories: ["Dystopian", "Exciting", "Suspenseful", "Sci-Fi TV"])
 let exampleMovie2 = Movie(name: "Travelers", thumbnailURL: URL(string: "https://picsum.photos/200/300/")!, categories: ["Dystopian", "Exciting", "Suspenseful", "Sci-Fi TV"])
@@ -15,3 +15,11 @@ let exampleMovie5 = Movie(name: "Hannibal", thumbnailURL: URL(string: "https://p
 let exampleMovie6 = Movie(name: "After Life", thumbnailURL: URL(string: "https://picsum.photos/200/304")!, categories: ["Dystopian", "Exciting", "Suspenseful", "Sci-Fi TV"])
 
 let exampleMovies: [Movie] = [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6]
+
+extension LinearGradient {
+    static let blackOpacityGradient = LinearGradient(
+        colors: [.black.opacity(0.0), .black.opacity(0.95)],
+        startPoint: .top,
+        endPoint: .bottom
+    )
+}
