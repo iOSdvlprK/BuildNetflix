@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Identifiable {
+struct Movie: Identifiable, Equatable {
     var id: String = UUID().uuidString
     var name: String
     var thumbnailURL: URL
@@ -32,6 +32,10 @@ struct Movie: Identifiable {
     var promotionHeadline: String?
     
     var trailers: [Trailer]
+    
+    static func == (lhs: Movie, rhs: Movie) -> Bool {
+        return lhs.id == rhs.id && lhs.name == rhs.name && lhs.thumbnailURL == rhs.thumbnailURL && lhs.categories == rhs.categories && lhs.year == rhs.year && lhs.rating == rhs.rating && lhs.numberOfSeasons == rhs.numberOfSeasons && lhs.currentEpisode == rhs.currentEpisode && lhs.defaultEpisodeInfo == rhs.defaultEpisodeInfo && lhs.creators == rhs.creators && lhs.cast == rhs.cast && lhs.moreLikeThisMovies == rhs.moreLikeThisMovies && lhs.episodes == rhs.episodes && lhs.promotionHeadline == rhs.promotionHeadline && lhs.trailers == rhs.trailers
+    }
     
     var numberOfSeasonsDisplay: String {
         if let num = numberOfSeasons {
