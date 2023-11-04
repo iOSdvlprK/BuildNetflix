@@ -30,6 +30,7 @@
 		D88D7E692AE94AB500D4A812 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7E682AE94AB500D4A812 /* HomeVM.swift */; };
 		D8CFD4242AEFD75600C0A234 /* VideoPreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD4232AEFD75600C0A234 /* VideoPreviewImage.swift */; };
 		D8CFD4272AEFDD0D00C0A234 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D8CFD4262AEFDD0D00C0A234 /* YouTubePlayerKit */; };
+		D8F93FDC2AF67DA400D85926 /* HomeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F93FDB2AF67DA400D85926 /* HomeStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		D88D7E652AE9470600D4A812 /* GlobalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
 		D88D7E682AE94AB500D4A812 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		D8CFD4232AEFD75600C0A234 /* VideoPreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewImage.swift; sourceTree = "<group>"; };
+		D8F93FDB2AF67DA400D85926 /* HomeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				D88D7E5C2AE93EB700D4A812 /* HomeView.swift */,
+				D8F93FDB2AF67DA400D85926 /* HomeStack.swift */,
 				D88D7E682AE94AB500D4A812 /* HomeVM.swift */,
 			);
 			path = Home;
@@ -263,6 +266,7 @@
 				D88D7E622AE944FA00D4A812 /* Movie.swift in Sources */,
 				D88D7E4D2AE93C2900D4A812 /* BuildNetflixApp.swift in Sources */,
 				D80DF09F2AEEA391001C918A /* MoreLikeThis.swift in Sources */,
+				D8F93FDC2AF67DA400D85926 /* HomeStack.swift in Sources */,
 				D80DF09C2AEE7511001C918A /* CustomTabSwitcher.swift in Sources */,
 				D87D86C42AEFEBA500AAD4C0 /* TrailerList.swift in Sources */,
 				D84CBA7E2AEBF0BF00CE3FF6 /* SmallVerticalButton.swift in Sources */,
