@@ -17,6 +17,7 @@
 		D83884942AFA8314009614A0 /* GenerateMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83884932AFA8314009614A0 /* GenerateMovies.swift */; };
 		D84CBA7E2AEBF0BF00CE3FF6 /* SmallVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84CBA7D2AEBF0BF00CE3FF6 /* SmallVerticalButton.swift */; };
 		D84CBA802AEBF96500CE3FF6 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84CBA7F2AEBF96500CE3FF6 /* PlayButton.swift */; };
+		D857F3EF2AFBB39A00D8E941 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D857F3EE2AFBB39A00D8E941 /* Kingfisher */; };
 		D865D5302AF90ECA004FC901 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865D52F2AF90ECA004FC901 /* SearchBar.swift */; };
 		D865D5322AF910EA004FC901 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865D5312AF910EA004FC901 /* Colors.swift */; };
 		D865D5342AF923C4004FC901 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865D5332AF923C4004FC901 /* ActivityIndicator.swift */; };
@@ -29,13 +30,11 @@
 		D88D7E512AE93C2B00D4A812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D88D7E502AE93C2B00D4A812 /* Assets.xcassets */; };
 		D88D7E552AE93C2B00D4A812 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D88D7E542AE93C2B00D4A812 /* Preview Assets.xcassets */; };
 		D88D7E5D2AE93EB700D4A812 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7E5C2AE93EB700D4A812 /* HomeView.swift */; };
-		D88D7E602AE943F200D4A812 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D88D7E5F2AE943F200D4A812 /* Kingfisher */; };
 		D88D7E622AE944FA00D4A812 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7E612AE944FA00D4A812 /* Movie.swift */; };
 		D88D7E642AE945A300D4A812 /* StandardHomeMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7E632AE945A300D4A812 /* StandardHomeMovie.swift */; };
 		D88D7E662AE9470600D4A812 /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7E652AE9470600D4A812 /* GlobalHelpers.swift */; };
 		D88D7E692AE94AB500D4A812 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7E682AE94AB500D4A812 /* HomeVM.swift */; };
 		D8CFD4242AEFD75600C0A234 /* VideoPreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD4232AEFD75600C0A234 /* VideoPreviewImage.swift */; };
-		D8CFD4272AEFDD0D00C0A234 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D8CFD4262AEFDD0D00C0A234 /* YouTubePlayerKit */; };
 		D8F93FDC2AF67DA400D85926 /* HomeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F93FDB2AF67DA400D85926 /* HomeStack.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8CFD4272AEFDD0D00C0A234 /* YouTubePlayerKit in Frameworks */,
-				D88D7E602AE943F200D4A812 /* Kingfisher in Frameworks */,
+				D857F3EF2AFBB39A00D8E941 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,8 +216,7 @@
 			);
 			name = BuildNetflix;
 			packageProductDependencies = (
-				D88D7E5F2AE943F200D4A812 /* Kingfisher */,
-				D8CFD4262AEFDD0D00C0A234 /* YouTubePlayerKit */,
+				D857F3EE2AFBB39A00D8E941 /* Kingfisher */,
 			);
 			productName = BuildNetflix;
 			productReference = D88D7E492AE93C2900D4A812 /* BuildNetflix.app */;
@@ -250,8 +247,7 @@
 			);
 			mainGroup = D88D7E402AE93C2900D4A812;
 			packageReferences = (
-				D88D7E5E2AE943F200D4A812 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				D8CFD4252AEFDD0D00C0A234 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				D857F3ED2AFBB39A00D8E941 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = D88D7E4A2AE93C2900D4A812 /* Products */;
 			projectDirPath = "";
@@ -520,7 +516,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D88D7E5E2AE943F200D4A812 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		D857F3ED2AFBB39A00D8E941 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
@@ -528,26 +524,13 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		D8CFD4252AEFDD0D00C0A234 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D88D7E5F2AE943F200D4A812 /* Kingfisher */ = {
+		D857F3EE2AFBB39A00D8E941 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D88D7E5E2AE943F200D4A812 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = D857F3ED2AFBB39A00D8E941 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		D8CFD4262AEFDD0D00C0A234 /* YouTubePlayerKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D8CFD4252AEFDD0D00C0A234 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
-			productName = YouTubePlayerKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

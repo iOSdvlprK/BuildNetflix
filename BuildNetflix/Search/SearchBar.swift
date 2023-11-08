@@ -31,8 +31,14 @@ struct SearchBar: View {
                     .background(Color.graySearchBackground)
                     .cornerRadius(8)
                     .foregroundColor(.white)
+//                    .onTapGesture(perform: {
+//                        isEditing = true
+//                    })
+//                    .animation(.default)
                     .onTapGesture(perform: {
-                        isEditing = true
+                        withAnimation {
+                            isEditing = true
+                        }
                     })
                 
                 if !text.isEmpty {
@@ -63,12 +69,17 @@ struct SearchBar: View {
                     Button(action: {
                         // clear text, hide both buttons, give up first-responder
                         text = ""
-                        isEditing = false
+                        withAnimation {
+                            isEditing = false
+                        }
                         hideKeyboard()
                     }, label: {
                         Text("Cancel")
                             .foregroundColor(.white)
                     })
+                    .padding(.trailing, 10)
+                    //   .animation(.default)
+                    .transition(.move(edge: .trailing))
                 }
             }
         }
