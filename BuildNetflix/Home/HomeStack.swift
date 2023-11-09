@@ -29,8 +29,8 @@ struct HomeStack: View {
                     LazyHStack {
                         ForEach(vm.getMovie(for: category, andHomeRow: topRowSelection, andGenre: selectedGenre)) { movie in
                             StandardHomeMovie(movie: movie)
-                                .frame(width: 100, height: 200)
-                                .padding(.horizontal, 20)
+                                .frame(width: 150, height: 200)
+//                                .padding(.horizontal, 10)
                                 .onTapGesture(perform: {
                                     movieDetailToShow = movie
                                 })

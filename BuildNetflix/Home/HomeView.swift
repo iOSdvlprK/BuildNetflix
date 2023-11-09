@@ -13,6 +13,7 @@ struct HomeView: View {
     let screen = UIScreen.main.bounds
     
     @State private var movieDetailToShow: Movie? = nil
+    @State private var isMovieDetailShowing = false
     
     @State private var topRowSelection: HomeTopRow = .home
     @State private var homeGenre: HomeGenre = .AllGenres
@@ -40,9 +41,10 @@ struct HomeView: View {
             
             if movieDetailToShow != nil {
                 MovieDetail(movie: movieDetailToShow!, movieDetailToShow: $movieDetailToShow)
-                    .animation(.easeInOut(duration: 0.3))
-//                    .animation(.easeInOut(duration: 0.5), value: movieDetailToShow)
+//                    .animation(.easeInOut(duration: 0.3))
+                    .animation(.easeInOut(duration: 0.3), value: isMovieDetailShowing)
                     .transition(.push(from: .bottom))
+                    .onAppear { isMovieDetailShowing.toggle() }
             }
             
             if showTopRowSelection {
