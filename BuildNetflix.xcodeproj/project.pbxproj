@@ -36,6 +36,7 @@
 		D88D7E662AE9470600D4A812 /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7E652AE9470600D4A812 /* GlobalHelpers.swift */; };
 		D88D7E692AE94AB500D4A812 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D7E682AE94AB500D4A812 /* HomeVM.swift */; };
 		D8CFD4242AEFD75600C0A234 /* VideoPreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD4232AEFD75600C0A234 /* VideoPreviewImage.swift */; };
+		D8EB27C82AFD1BDA0028707E /* SearchResultsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB27C72AFD1BDA0028707E /* SearchResultsGrid.swift */; };
 		D8F93FDC2AF67DA400D85926 /* HomeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F93FDB2AF67DA400D85926 /* HomeStack.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		D88D7E652AE9470600D4A812 /* GlobalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
 		D88D7E682AE94AB500D4A812 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		D8CFD4232AEFD75600C0A234 /* VideoPreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewImage.swift; sourceTree = "<group>"; };
+		D8EB27C72AFD1BDA0028707E /* SearchResultsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsGrid.swift; sourceTree = "<group>"; };
 		D8F93FDB2AF67DA400D85926 /* HomeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 			children = (
 				D865D52F2AF90ECA004FC901 /* SearchBar.swift */,
 				D838848F2AFA7881009614A0 /* SearchView.swift */,
+				D8EB27C72AFD1BDA0028707E /* SearchResultsGrid.swift */,
 				D857F3F02AFBD21200D8E941 /* PopularMovieView.swift */,
 				D83884912AFA791D009614A0 /* SearchVM.swift */,
 			);
@@ -286,6 +289,7 @@
 				D88D7E662AE9470600D4A812 /* GlobalHelpers.swift in Sources */,
 				D883CC022AEFAF32007516D4 /* Trailer.swift in Sources */,
 				D83884902AFA7881009614A0 /* SearchView.swift in Sources */,
+				D8EB27C82AFD1BDA0028707E /* SearchResultsGrid.swift in Sources */,
 				D82E59C52AED3CCB007F5531 /* Episode.swift in Sources */,
 				D88D7E5D2AE93EB700D4A812 /* HomeView.swift in Sources */,
 				D88D7E692AE94AB500D4A812 /* HomeVM.swift in Sources */,

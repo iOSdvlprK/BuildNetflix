@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
                 .tag(0)
             
-            Text("Search")
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
