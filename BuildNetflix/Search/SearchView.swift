@@ -11,6 +11,7 @@ struct SearchView: View {
     @ObservedObject var vm = SearchVM()
     
     @State private var searchText = ""
+    @State private var movieDetailToShow: Movie?
     
     var body: some View {
         let searchTextBinding = Binding {
@@ -30,20 +31,52 @@ struct SearchView: View {
                 
                 ScrollView {
                     if vm.isShowingPopularMovies {
-                        Text("Popular Movies")
+                        PopularList(movies: vm.popularMovies, movieDetailToShow: $movieDetailToShow)
                     }
                     
                     if vm.viewState == .empty {
-                        Text("Empty")
+                        Text("Your search did not have any results.")
+                            .bold()
+                            .padding(.top, 150)
                     } else if vm.viewState == .ready && !vm.isShowingPopularMovies {
-                        Text("Ready")
+                        Text("Search Results")
                     }
                 }
                 
                 Spacer()
             }
+            
+            if movieDetailToShow != nil {
+                MovieDetail(movie: movieDetailToShow!, movieDetailToShow: $movieDetailToShow)
+            }
         }
         .foregroundColor(.white)
+    }
+}
+
+struct PopularList: View {
+    var movies: [Movie]
+    
+    @Binding var movieDetailToShow: Movie?
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Popular Movies")
+                    .bold()
+                    .font(.title3)
+                    .padding(.leading, 12)
+                
+                Spacer()
+            }
+            
+            LazyVStack {
+                ForEach(movies, id: \.id) { movie in
+                    PopularMovieView(movie: movie, movieDetailToShow: $movieDetailToShow)
+                        .frame(height: 75)
+                }
+            }
+        }
     }
 }
 
