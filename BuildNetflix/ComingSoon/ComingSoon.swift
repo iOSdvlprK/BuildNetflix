@@ -8,25 +8,81 @@
 import SwiftUI
 
 struct ComingSoon: View {
+    @State private var movieDetailToShow: Movie?
+    
+    @State private var scrollOffset: CGFloat = 0.0
+    @State private var activeIndex = 0
+//    @State private var isAnimating = false
+    
+    @ObservedObject var vm = ComingSoonVM()
+    
+    func updateActiveIndex(fromScroll scroll: CGFloat) {
+        if scroll < 80 {
+            activeIndex = 0
+        } else {
+            let remove105 = scroll - 80
+            
+            let active = Int(remove105 / 440) + 1
+            activeIndex = Int(active)
+        }
+    }
+    
     var body: some View {
-        NavigationStack {
+        let movies = vm.movies.enumerated().map({ $0 })
+        
+        let scrollTrackingBinding = Binding(get: {
+            return scrollOffset
+        }, set: { newVal in
+            scrollOffset = newVal
+            updateActiveIndex(fromScroll: newVal)
+        })
+        
+        return NavigationStack {
             Group {
                 ZStack {
                     Color.black
                         .edgesIgnoringSafeArea(.all)
                     
-                    ScrollView {
-                        VStack {
+                    TrackableScrollView(.vertical, showIndicators: false, contentOffset: scrollTrackingBinding) {
+                        LazyVStack {
                             NavigationLink(destination: {
                                 Text("Notification List")
                             }, label: {
                                 notificationBar
                             })
                             
-                            Text("ForEach loop of cells")
+                            ForEach(movies, id: \.offset) { index, movie in
+                                ComingSoonRow(movie: movie, movieDetailToShow: $movieDetailToShow)
+                                    .frame(height: 430)
+                                    .overlay {
+                                         Group {
+                                             index == activeIndex ? Color.clear : Color.black.opacity(0.8)
+                                         }
+                                         .animation(.easeInOut)
+//                                         .animation(.easeInOut, value: isAnimating)
+                                    }
+                                    /* // animation not working #2
+                                    .onChange(of: activeIndex) { _ in
+                                        isAnimating.toggle()
+                                    }
+                                    */
+                                    /* // animation not working #1
+                                    .onAppear {
+                                        if index == activeIndex {
+                                            isAnimating.toggle()
+                                        }
+                                    }
+                                    */
+                            }
                         }
                     }
                     .foregroundColor(.white)
+                    
+                    /*
+                    Text("\(scrollOffset)")
+                        .padding()
+                        .background(Color.red)
+                    */
                 }
             }
             .navigationTitle("")
