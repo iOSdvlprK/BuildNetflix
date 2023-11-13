@@ -38,6 +38,9 @@ struct Movie: Identifiable, Equatable {
     
     var trailers: [Trailer]
     
+    var previewImageName: String
+    var previewVideoURL: URL?
+    
     static func == (lhs: Movie, rhs: Movie) -> Bool {
         return lhs.id == rhs.id && lhs.name == rhs.name && lhs.thumbnailURL == rhs.thumbnailURL && lhs.categories == rhs.categories && lhs.year == rhs.year && lhs.rating == rhs.rating && lhs.numberOfSeasons == rhs.numberOfSeasons && lhs.currentEpisode == rhs.currentEpisode && lhs.defaultEpisodeInfo == rhs.defaultEpisodeInfo && lhs.creators == rhs.creators && lhs.cast == rhs.cast && lhs.moreLikeThisMovies == rhs.moreLikeThisMovies && lhs.episodes == rhs.episodes && lhs.promotionHeadline == rhs.promotionHeadline && lhs.trailers == rhs.trailers
     }
