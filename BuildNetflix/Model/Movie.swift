@@ -5,7 +5,7 @@
 //  Created by joe on 2023/10/25.
 //
 
-import Foundation
+import SwiftUI
 
 struct Movie: Identifiable, Equatable {
     var id: String = UUID().uuidString
@@ -22,6 +22,7 @@ struct Movie: Identifiable, Equatable {
     
     // Personalization
     var currentEpisode: CurrentEpisodeInfo?
+    var accentColor: Color = .white
     var defaultEpisodeInfo: CurrentEpisodeInfo
     var creators: String
     var cast: String
