@@ -11,17 +11,24 @@ struct PagerView<Content: View>: View {
     let pageCount: Int
     @Binding var currentIndex: Int
     @Binding var translation: CGFloat
+    
+    @State private var verticalDragIsActive = false
+    
+    let externalDragGesture: _EndedGesture<_ChangedGesture<DragGesture>>
+    
     let content: Content
     
     init(
         pageCount: Int,
         currentIndex: Binding<Int>,
         translation: Binding<CGFloat>,
+        externalDragGesture: _EndedGesture<_ChangedGesture<DragGesture>>,
         @ViewBuilder content: () -> Content
     ) {
         self.pageCount = pageCount
         self._currentIndex = currentIndex
         self._translation = translation
+        self.externalDragGesture = externalDragGesture
         self.content = content()
     }
     
@@ -37,29 +44,44 @@ struct PagerView<Content: View>: View {
                 .offset(x: self.translation)
                 .animation(.interactiveSpring(), value: translation)
                 .gesture(
-                    DragGesture()
-                        .onChanged({ value in
-                            translation = value.translation.width
-                        })
-                        .onEnded({ value in
-                            // process of snap
-                            let offset = value.translation.width / geo.size.width
-                            let newIndex = (CGFloat(self.currentIndex) - offset).rounded()
-                            // currentIndex = 1
-                            // geo.size.width = 100
-                            // translation.width = 75
-                            
-                            // offset = 0.75
-                            // newIndex = 1 - 0.75 = 0.25.rounded() = 0
-                            currentIndex = min(max(Int(newIndex), 0), pageCount - 1)
-                            translation = 0
-                        })
+                    externalDragGesture.simultaneously(
+                        with:
+                            DragGesture(minimumDistance: 20)
+                            .onChanged({ value in
+                                if verticalDragIsActive {
+                                    return
+                                }
+                                
+                                if abs(value.translation.width) < abs(value.translation.height) {
+                                    verticalDragIsActive = true
+                                    return
+                                }
+                                
+                                // horizontal drag only
+                                
+                                translation = value.translation.width
+                            })
+                            .onEnded({ value in
+                                if verticalDragIsActive {
+                                    verticalDragIsActive = false
+                                    return
+                                }
+                                
+                                // ending a horizontal drag
+                                
+                                let offset = value.translation.width / geo.size.width
+                                let newIndex = (CGFloat(self.currentIndex) - offset).rounded()
+                                currentIndex = min(max(Int(newIndex), 0), pageCount - 1)
+                                translation = 0
+                            })
+                    )
                 )
             }
         }
     }
 }
 
+/* uncommented due to multiple gesture rendering
 struct PagerDummy: View {
     @State private var currentIndex: Int = 0
     @State private var translation: CGFloat = .zero
@@ -83,3 +105,4 @@ struct PagerView_Previews: PreviewProvider {
         PagerDummy()
     }
 }
+*/
